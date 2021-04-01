@@ -66,6 +66,7 @@ class Course {
 public class FP04CustomClass {
 
 	public static void main(String[] args) {
+		
 		List<Course> courses = List.of(
 				new Course("Spring","Framework",98,20000),
 				new Course("Spring Boot","Framework",95,18000),
@@ -173,24 +174,18 @@ public class FP04CustomClass {
 		
 		
 		
+		Predicate<Course> reviewScoreGreatherThan952 = getReviewScoreCutoffScore(95);
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+		Predicate<Course> reviewScoreGreatherThan902 = getReviewScoreCutoffScore(90);
 		
 		
 		
 		
 
+	}
+
+	private static Predicate<Course> getReviewScoreCutoffScore(int cutOffScoreScore) {
+		return course ->course.getReviewScore()>cutOffScoreScore;
 	}
 
 }

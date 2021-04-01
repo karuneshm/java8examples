@@ -25,6 +25,15 @@ public class FP03FunctionalInterfaces {
 		
 		BinaryOperator<Integer> sumBinaryOperator = (x,y) ->x+y;
 		
+		BinaryOperator<Integer> sumBinaryOperator2 = new BinaryOperator<Integer>() {
+
+			@Override
+			public Integer apply(Integer sum, Integer nextNumber) {
+				return sum+nextNumber;
+			}
+			
+		};
+		
 		//No Input, return something
 		//Supplier
 		
@@ -33,11 +42,11 @@ public class FP03FunctionalInterfaces {
 			return random.nextInt(1000);
 		};
 		
-		//System.out.println(randomIntegerSupplier.get());
+		System.out.println(randomIntegerSupplier.get());
 		
 		//UnaryOperator
 		
-		UnaryOperator<Integer> unaryOperator = (x) ->x*3;
+		UnaryOperator<Integer> unaryOperator = x ->x*3;
 		
 		System.out.println(unaryOperator.apply(10));
 		

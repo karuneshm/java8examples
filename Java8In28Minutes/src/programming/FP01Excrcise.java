@@ -24,13 +24,19 @@ public class FP01Excrcise {
 //		.filter(course -> course.length()>=4)
 //		.forEach(System.out::println);
 		
+//		courses.stream()
+//		       .map(course -> course + " " +course.length())
+//		       .forEach(System.out::println);
+		
 		courses.stream()
-		       .map(course -> course + " " +course.length())
-		       .forEach(System.out::println);
+				.map(course -> course + " " + course.length())
+				.forEach(FP01Excrcise::displayCourse);
 
 	}
 	
-	
+	private static void displayCourse(String course) {
+		System.out.println(course);
+	}
 
 	
 	private static void printOddNumberInListFunctional(List<Integer> numbers) {

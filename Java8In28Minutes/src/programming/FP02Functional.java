@@ -16,11 +16,15 @@ public class FP02Functional {
 		
 		int sum = addListFunctional(numbers) ;
 		
-		System.out.println(sum);
+		//System.out.println(sum);
 		
 		List<Integer> doubleList = lengthofCoursesList(courses);
 		
-		System.out.println(doubleList);
+		//System.out.println(doubleList);
+		
+		List<Integer> evenNumbers = evenNumbers(numbers);
+		
+		System.out.println(evenNumbers);
 		
 		
 
