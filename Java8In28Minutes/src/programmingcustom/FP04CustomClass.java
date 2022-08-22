@@ -88,17 +88,17 @@ public class FP04CustomClass {
 		Predicate<Course> reviewScorelessThan90 = course ->course.getReviewScore()<90;
 		
 		
-		System.out.println(
-				courses.stream().allMatch(reviewScoreGreatherThan95));
-		
-		System.out.println(
-				courses.stream().allMatch(reviewScoreGreatherThan90));
-		
-		System.out.println(
-				courses.stream().noneMatch(reviewScorelessThan90));
-		
-		System.out.println(
-				courses.stream().anyMatch(reviewScoreGreatherThan90));
+//		System.out.println(
+//				courses.stream().allMatch(reviewScoreGreatherThan95));
+//		
+//		System.out.println(
+//				courses.stream().allMatch(reviewScoreGreatherThan90));
+//		
+//		System.out.println(
+//				courses.stream().noneMatch(reviewScorelessThan90));
+//		
+//		System.out.println(
+//				courses.stream().anyMatch(reviewScoreGreatherThan90));
 		
 		Comparator<Course> comparingByNoOfStudents = 
 				Comparator.comparing(Course::getNoOfStudents);
@@ -123,6 +123,9 @@ public class FP04CustomClass {
 				
 		System.out.println(
 				courses.stream().sorted(comparingByNoOfStudentsAndReviewScore).skip(3).collect(Collectors.toList()));
+		
+		
+		System.out.println("-------------");
 		
 		//takewhile
 		System.out.println(
@@ -167,11 +170,22 @@ public class FP04CustomClass {
 				        .count());
 		
 		System.out.println(
+				courses.stream().collect(Collectors.groupingBy(Course::getCategory)));
+		
+		System.out.println(
 				courses.stream()
 					.collect(Collectors.groupingBy(Course::getCategory, Collectors.counting()))
 				);
-		        
 		
+		System.out.println(
+				courses.stream()
+					.collect(Collectors.groupingBy(Course::getCategory, 
+							Collectors.maxBy(Comparator.comparing(Course::getReviewScore))))
+				);
+		        
+		System.out.println(
+				courses.stream().collect(Collectors.groupingBy(Course::getCategory,
+						Collectors.mapping(Course::getName, Collectors.toList()))));
 		
 		
 		Predicate<Course> reviewScoreGreatherThan952 = getReviewScoreCutoffScore(95);

@@ -8,7 +8,11 @@ public class FP02Functional {
 		
 		
 		
-		List<Integer> numbers = List.of(12,9,4,6,12,15);
+		List<Integer> numbers = List.of(12,9,13,4,6,2,4,12,15);
+		
+		List<Integer> doubledNumbers = doubleListNumbers(numbers);
+		
+		System.out.println(doubledNumbers);
 		
 		List<String> courses = 
 				List.of("Spring","Spring Boot","API","MicroServices",
@@ -24,12 +28,14 @@ public class FP02Functional {
 		
 		List<Integer> evenNumbers = evenNumbers(numbers);
 		
-		System.out.println(evenNumbers);
+		//System.out.println(doubleList);
 		
 		
 
 	}
 	
+	
+
 	private static List<Integer> doubleListNumbers(List<Integer> numbers) {
 		
 		return numbers.stream()
@@ -52,9 +58,9 @@ public class FP02Functional {
 		
 	}
 
-	private static int sum(int aggregate , int number) {
-		System.out.println(aggregate + " " +number);
-		return aggregate+number;
+	private static int sum(int aggregate , int nextNumber) {
+		System.out.println(aggregate + " " +nextNumber);
+		return aggregate+nextNumber;
 	}
 
 	private static int addListFunctional(List<Integer> numbers) {
@@ -67,7 +73,7 @@ public class FP02Functional {
 		
 		return numbers.stream()
 				.reduce(0, Integer::sum);
-		
+     		
 		
 		
 	}		

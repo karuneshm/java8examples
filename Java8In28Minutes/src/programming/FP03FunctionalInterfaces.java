@@ -19,9 +19,38 @@ public class FP03FunctionalInterfaces {
 		
 		Predicate< Integer> evenPredicate = number -> number%2==0;
 		
+//		Predicate<Integer> test = new Predicate<Integer>(){
+//			@Override
+//			public boolean test(Integer x ) {
+//				return x%2==0;
+//			}
+//		};
+		
 		Function<Integer, Integer> squaredFunction = number->number*number;
 		
+//		Function<Integer, Integer> function = new Function<Integer, Integer>() {
+//			@Override
+//			public Integer apply(Integer x) {
+//				return x*x;
+//				
+//			}
+//				
+//		};
+		
+		
 		Consumer<Integer> sysoutConsumer = System.out::println;
+		
+//		Consumer<Integer> sysoutConsumer2 = new Consumer<Integer>() {
+//
+//			@Override
+//			public void accept(Integer x) {
+//				System.out.println(x);
+//				
+//			}
+//			
+//		};
+		
+		
 		
 		BinaryOperator<Integer> sumBinaryOperator = (x,y) ->x+y;
 		
@@ -127,7 +156,6 @@ public class FP03FunctionalInterfaces {
 			.filter(evenPredicate) // Predicate
 			.map(squaredFunction) // Function
 			.forEach(sysoutConsumer); //Consumer
-		
 		
 		
 		

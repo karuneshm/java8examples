@@ -21,7 +21,7 @@ public class FP02Strctured {
 		int sum = 0;
 		
 		for (int number : numbers) {
-			sum += sum + number;
+			sum += number;
 		}
 		
 		return sum;

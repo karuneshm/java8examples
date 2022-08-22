@@ -21,6 +21,8 @@ public class FP03MethodReferences {
 		
 		
 		Supplier<String> supplier = String::new;
+		
+		supplier.get();
 
 	}
 
